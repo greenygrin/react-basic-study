@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function App () {
+      // const data = React.useState(0)
+      // const counter = data[0]
+      // const modifier = data[1]
+      const [counter, setCounter] = React.useState(0)
+      const onClick = () => {
+        // setCounter(counter + 1)
+        // 함수를 사용해 현재 state를 기준으로 하면 예상치 못한 다른 곳에서의 state 변화에 대응 가능
+        setCounter((current) => current + 1)
+      }
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button onClick={onClick}>Click me</button>
+        </div>
+      )
+    }
+    const container = document.getElementById('root')
+    const root = ReactDOM.createRoot(container)
+    root.render(<App />)
+  </script>
+</html>

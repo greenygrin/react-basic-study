@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script>
+    const root = document.getElementById('root')
+    const counter = React.createElement(
+      'h3',
+      {
+        id: 'counter',
+        onMouseEnter: () => console.log('mouse enter'),
+      },
+      "Hello, I'm a counter."
+    )
+    const btn = React.createElement(
+      'button',
+      {
+        onClick: () => console.log('clicked'),
+      },
+      'Click me'
+    )
+    const app = React.createElement('div', null, [counter, btn])
+    ReactDOM.render(app, root)
+  </script> -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- <script>
+    const container = document.getElementById('root')
+    const root = ReactDOM.createRoot(container)
+    const counter = React.createElement(
+      'h3',
+      {
+        id: 'counter',
+        onMouseEnter: () => console.log('mouse enter'),
+      },
+      "Hello, I'm a counter."
+    )
+    const btn = React.createElement(
+      'button',
+      {
+        onClick: () => console.log('clicked'),
+      },
+      'Click me'
+    )
+    const app = React.createElement('div', null, [counter, btn])
+    root.render(app)
+  </script> -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const container = document.getElementById('root')
+    const root = ReactDOM.createRoot(container)
+    // function Counter () {
+    //   return (
+    //     <h3 id='counter' onMouseEnter={() => console.log('mouse enter')}>
+    //       Hello, I'm a counter.
+    //     </h3>
+    //   )
+    // }
+    const Counter = () => (
+      <h3 id='counter' onMouseEnter={() => console.log('mouse enter')}>
+        Hello, I'm a counter.
+      </h3>
+    )
+    const Button = () => (
+      <button style={{ backgroundColor: 'tomato' }} onClick={() => console.log('clicked')}>
+        Click me
+      </button>
+    )
+    const App = () => (
+      <div>
+        <Counter />
+        <Button />
+      </div>
+    )
+    root.render(<App />)
+  </script>
+</html>
